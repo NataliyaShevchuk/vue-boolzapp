@@ -1,0 +1,229 @@
+:root{
+    --bg-navbar: #009688;
+    --bg-gradient-up: #DBDBD2;
+    --bg-gradient-down: #D2DBDB;
+    --color-alert-blue: #8EDAFC;
+    --color-message: #D5F9BA;
+    --color-light-icons: #B2B4B7;
+    --color-dark-icons: #6B7376;
+    --bg-navbar-light: #eeeeed;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.my-container{
+    background-image: linear-gradient(var(--bg-gradient-up), var(--bg-gradient-down));
+    height: 100vh;
+    position: relative;
+}
+
+.nav-green{
+    background-color: var(--bg-navbar);
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    /* z-index: 10; */
+}
+
+.all-in-one-container{
+    width: 920px;
+    background-color: white;
+    z-index: 10;
+    margin: 1rem 4rem;
+    display: flex;
+}
+
+img{
+    width: 100%;
+    display: block;
+    aspect-ratio: 1/1;
+    max-height: 50px;
+    border-radius: 50%;
+}
+
+i{
+    color: var(--color-light-icons);
+    font-size: 1.5rem;
+}
+
+.sidebar-user-navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: .5rem;
+    align-items: center;
+    background-color: var(--bg-navbar-light);
+    height: 66px;
+    border-right: .5px solid var(--color-light-icons);
+}
+
+.user-img-name{
+    display: inherit;
+    align-items: center;
+}
+
+.sidebar-user-navbar-action-icons{
+    display: flex;
+    justify-content: space-between;
+    width: 90px;
+    margin-right: .5rem;
+}
+
+h5{
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+.sidebar-alert{
+    background-color: var(--color-alert-blue);
+    display: flex;
+}
+
+.silent-icon{
+    color: var(--color-alert-blue);
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    padding: .8rem .6rem;
+}
+
+
+small > a{
+    color: var(--color-dark-icons);
+}
+
+.sidebar-search-chat-container{
+    padding: .5rem;
+}
+.search-chat-bar{
+    display: flex;
+}
+.form-control{
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-dark-icons);
+    background-color: #fff;
+    background-clip: padding-box;
+    border: .5px solid var(--color-light-icons);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.1px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.my-width{
+    width: 50px;
+    padding: .2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-box-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.chat-box{
+    display: flex;
+    padding: 1rem;
+}
+
+small{
+    color: var(--color-dark-icons);
+}
+
+.text-details-chat-box{
+    padding: 0 1rem;
+    width: 90%;
+}
+
+.time-message{
+    display: flex;
+    justify-content: end;
+}
+
+.row{
+    padding-left: 0;
+    padding-right: 0;
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0; 
+}
+
+.user-img-chat{
+    display: flex;
+    justify-content: center;
+}
+
+.container-chat{
+    background-image: url(../img/mine.jpg);
+    background-repeat: repeat;
+    flex-grow: 1;
+    overflow: auto;
+    height: 80vh;
+}
+
+.deeper-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.message{
+    padding: 1rem 4rem 1rem 1rem;
+    text-align: start;
+    background-color: white;
+    border-radius: 20px;
+    margin: .5rem 2rem;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.from-me{
+    background-color: var(--color-message);
+    text-align: end;
+}
+
+p{
+    margin: 0;
+}
+
+.date-send{
+    text-align: end;
+    position: absolute;
+    right: 11px;
+    bottom: 4px;
+    font-size: 8px;
+}
+.footer-navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-navbar-light);
+}
+
+.container-input{
+    margin: 1rem;
+    width: 100%;
+}
+.icon{
+    color: var(--color-dark-icons);
+    margin: 1rem;
+}
