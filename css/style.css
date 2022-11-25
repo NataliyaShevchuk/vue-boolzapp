@@ -1,4 +1,5 @@
 :root{
+    --bg-color: linear-gradient(180deg, rgba(0,150,136,1) 0%, rgba(14,154,141,1) 21%, rgba(219,219,210,1) 21%, rgba(218,219,211,1) 57%, rgba(210,219,219,1) 100%);
     --bg-navbar: #009688;
     --bg-gradient-up: #DBDBD2;
     --bg-gradient-down: #D2DBDB;
@@ -15,27 +16,22 @@
     box-sizing: border-box;
 }
 
-.my-container{
-    background-image: linear-gradient(var(--bg-gradient-up), var(--bg-gradient-down));
+body{
+    background: var(--bg-color);
     height: 100vh;
-    position: relative;
-}
-
-.nav-green{
-    background-color: var(--bg-navbar);
-    width: 100%;
-    height: 100px;
-    position: absolute;
-    top: 0;
-    /* z-index: 10; */
 }
 
 .all-in-one-container{
     width: 920px;
     background-color: white;
-    z-index: 10;
-    margin: 1rem 4rem;
+    margin: 2rem auto;
+    height: 90vh;
+}
+
+.sidebar-container{
     display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 img{
@@ -168,20 +164,21 @@ small{
     display: flex;
     justify-content: center;
 }
+.message-container{
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+}
+
 
 .container-chat{
     background-image: url(../img/mine.jpg);
     background-repeat: repeat;
     flex-grow: 1;
     overflow: auto;
-    height: calc(100% - 66px - 69px);
+    /* height: calc(100% - 66px - 69px); */
 }
 
-.deeper-container{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
 
 .message{
     padding: 1rem 4rem 1rem 1rem;

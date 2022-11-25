@@ -15,10 +15,10 @@
 </head>
 <body>
     <div id="app">
-        <main class="my-container">
-            <div class="nav-green">
-                <div class="all-in-one-container row">
+        <main class="all-in-one-container row">
+                    <!-- sidebar-container -->
                     <div class="sidebar-container col-4">
+                        <!-- navbar  -->
                         <div class="sidebar-user-navbar">
                             <div class="user-img-name">
                                 <img src="img/avatar_io.jpg" alt="user avatar">
@@ -30,6 +30,7 @@
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
+                        <!-- alert  -->
                         <div class="sidebar-alert">
                             <div class="alert d-flex">
                                 <i class="silent-icon    fa-solid fa-bell-slash"></i>
@@ -39,6 +40,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- barra di ricerca -->
                         <div class="sidebar-search-chat-container">
                             <div class="search-chat-bar">
                                 <div class="form-control my-width">
@@ -49,22 +51,137 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- chat box grande container -->
                         <div class="chat-box-container">
-                            <div class="chat-box">
+                            <!-- chat box piccolo container  -->
+                            <div class="chat-box"
+                            v-for="(user, i) in usersList " :key="i + user.name">
                                 <div class="user-chat-img">
-                                    <img src="img/avatar_1.jpg" alt="avatar 1">
+                                    <img :src="`img/avatar${user.avatar}.jpg`" alt="avatar 1">
                                 </div>
                                 <div class="text-details-chat-box">
-                                    <h5>Michele</h5>
-                                    <small>Ultimo messaggio inviato</small>
+                                    <h5> {{user.name}} </h5>
+                                    <small> {{}} </small>
                                 </div>
                                 <div class="time-message">
                                     <small>orario</small>
                                 </div>
                             </div>
+
+                            <!-- chat box piccolo container  -->
+                            <div class="chat-box"
+                            v-for="(user, i) in usersList " :key="i + user.name">
+                                <div class="user-chat-img">
+                                    <img :src="`img/avatar${user.avatar}.jpg`" alt="avatar 1">
+                                </div>
+                                <div class="text-details-chat-box">
+                                    <h5> {{user.name}} </h5>
+                                    <small> {{}} </small>
+                                </div>
+                                <div class="time-message">
+                                    <small>orario</small>
+                                </div>
+                            </div>
+
+                            <!-- chat box piccolo container  -->
+                            <div class="chat-box"
+                            v-for="(user, i) in usersList " :key="i + user.name">
+                                <div class="user-chat-img">
+                                    <img :src="`img/avatar${user.avatar}.jpg`" alt="avatar 1">
+                                </div>
+                                <div class="text-details-chat-box">
+                                    <h5> {{user.name}} </h5>
+                                    <small> {{}} </small>
+                                </div>
+                                <div class="time-message">
+                                    <small>orario</small>
+                                </div>
+                            </div>
+
+                            <!-- chat box piccolo container  -->
+                            <div class="chat-box"
+                            v-for="(user, i) in usersList " :key="i + user.name">
+                                <div class="user-chat-img">
+                                    <img :src="`img/avatar${user.avatar}.jpg`" alt="avatar 1">
+                                </div>
+                                <div class="text-details-chat-box">
+                                    <h5> {{user.name}} </h5>
+                                    <small> {{}} </small>
+                                </div>
+                                <div class="time-message">
+                                    <small>orario</small>
+                                </div>
+                            </div>
+
+                            <!-- chat box piccolo container  -->
+                            <div class="chat-box"
+                            v-for="(user, i) in usersList " :key="i + user.name">
+                                <div class="user-chat-img">
+                                    <img :src="`img/avatar${user.avatar}.jpg`" alt="avatar 1">
+                                </div>
+                                <div class="text-details-chat-box">
+                                    <h5> {{user.name}} </h5>
+                                    <small> {{}} </small>
+                                </div>
+                                <div class="time-message">
+                                    <small>orario</small>
+                                </div>
+                            </div>
+
+                            <!-- chat box piccolo container  -->
+                            <div class="chat-box"
+                            v-for="(user, i) in usersList " :key="i + user.name">
+                                <div class="user-chat-img">
+                                    <img :src="`img/avatar${user.avatar}.jpg`" alt="avatar 1">
+                                </div>
+                                <div class="text-details-chat-box">
+                                    <h5> {{user.name}} </h5>
+                                    <small> {{}} </small>
+                                </div>
+                                <div class="time-message">
+                                    <small>orario</small>
+                                </div>
+                            </div>
+
+                            <!-- chat box piccolo container  -->
+                            <div class="chat-box"
+                            v-for="(user, i) in usersList " :key="i + user.name">
+                                <div class="user-chat-img">
+                                    <img :src="`img/avatar${user.avatar}.jpg`" alt="avatar 1">
+                                </div>
+                                <div class="text-details-chat-box">
+                                    <h5> {{user.name}} </h5>
+                                    <small> {{}} </small>
+                                </div>
+                                <div class="time-message">
+                                    <small>orario</small>
+                                </div>
+                            </div>
+
+                            <!-- chat box piccolo container  -->
+                            <div class="chat-box"
+                            v-for="(user, i) in usersList " :key="i + user.name">
+                                <div class="user-chat-img">
+                                    <img :src="`img/avatar${user.avatar}.jpg`" alt="avatar 1">
+                                </div>
+                                <div class="text-details-chat-box">
+                                    <h5> {{user.name}} </h5>
+                                    <small> {{}} </small>
+                                </div>
+                                <div class="time-message">
+                                    <small>orario</small>
+                                </div>
+                            </div>
+                            
+                            
+                            
                         </div>
                     </div>
+
+                    <!-- contenitore chat aperta  -->
                     <div class="message-container col-8">
+
+                        <!-- navbar user  -->
                         <div class="sidebar-user-navbar  border-0">
                             <div class="user-img-chat">
                                 <div class="div-container-img">
@@ -81,9 +198,10 @@
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
+
+                        <!-- container chat con overflow -->
                         <div class="container-chat">
-                            <div class="deeper-container">
-                                <div class=""></div>
+
                                 <div class="message from-me">
                                     <p>Hello there!</p>
                                     <small class="date-send">12:25</small>
@@ -99,8 +217,9 @@
                                 <div class="message from-user">
                                     <p>Hi!</p>
                                 </div>
-                            </div>
                         </div>
+
+                        <!-- footer navbar  -->
                         <div class="footer-navbar">
                             <div class="icon">
                                 <i class="fa-regular fa-face-smile"></i>
@@ -112,14 +231,17 @@
                                 <i class="fa-solid fa-microphone"></i>
                             </div>
                         </div>
+
+
+                        <!-- fine container  -->
                     </div>
-                </div>
-            </div>
+
+
         </main>
     </div>
 
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" type="module"></script>
 
 
 </body>
