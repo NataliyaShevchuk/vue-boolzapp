@@ -1,9 +1,9 @@
-import importedUsersList from "usersList.js";
+import importedUsersList from "./usersList.js";
 
 //dall'oggetto globale Vue, estraggo in una variabile la funzione CreateApp
 const  {createApp} = Vue;
 
-createApp({
+createApp ({
     //() {} = rappresenta una funzione abbrevviata 
     data (){ //la funzione data non può ricevere gli argomenti
     //data deve avere un return di un oggetto
