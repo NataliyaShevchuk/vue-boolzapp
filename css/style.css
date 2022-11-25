@@ -174,7 +174,7 @@ small{
     background-repeat: repeat;
     flex-grow: 1;
     overflow: auto;
-    height: 80vh;
+    height: calc(100% - 66px - 69px);
 }
 
 .deeper-container{
