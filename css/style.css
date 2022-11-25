@@ -182,20 +182,19 @@ small{
 
 .message{
     padding: 1rem 4rem 1rem 1rem;
-    text-align: start;
     background-color: white;
     border-radius: 20px;
     margin: .5rem 2rem;
     width: 40%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     position: relative;
 }
 
 .from-me{
     background-color: var(--color-message);
-    text-align: end;
+    align-self: flex-end;
 }
 
 p{
