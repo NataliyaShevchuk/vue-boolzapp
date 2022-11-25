@@ -59,12 +59,14 @@
                         <!-- chat box grande container -->
                         <div class="chat-box-container">
                             <!-- chat box piccolo container  -->
-                            <div class="chat-box">
+                            <div class="chat-box" 
+                            v-for="(user, i) in usersList" :key="i + user.name"
+                            @click="selectedUser = user">
                                 <div class="user-chat-img">
-                                    <img src="img/avatar_1.jpg" alt="avatar 1">
+                                    <img :src="` img/avatar${user.avatar}.jpg` " alt="avatar 1">
                                 </div>
                                 <div class="text-details-chat-box">
-                                    <h5> Michele</h5>
+                                    <h5> {{user.name}} </h5>
                                     <small> Ultimo messaggio inviato </small>
                                 </div>
                                 <div class="time-message">
@@ -83,11 +85,11 @@
                         <div class="sidebar-user-navbar  border-0">
                             <div class="user-img-chat">
                                 <div class="div-container-img">
-                                    <img src="img/avatar_1.jpg" alt="avatar">
+                                    <img :src="`img/avatar_1.jpg`" alt="avatar">
                                 </div>
                                 <div class="text-details-chat-box">
-                                    <h5>Michele</h5>
-                                    <small>Ultimo accesso oggi alle 12:00</small>
+                                    <h5>Name </h5>
+                                    <small> Ultimo accesso </small>
                                 </div>
                             </div>
                             <div class="sidebar-user-navbar-action-icons">
@@ -100,21 +102,12 @@
                         <!-- container chat con overflow -->
                         <div class="container-chat">
 
-                                <div class="message from-me">
-                                    <p>Hello there!</p>
-                                    <small class="date-send">12:25</small>
-                                </div>
-                                <div class="message from-user">
-                                    <p>Hi!</p>
-                                    <small class="date-send">12:25</small>
-                                </div>
-                                <div class="message from-me">
-                                    <p>Hello there!</p>
-                                    <small class="date-send">12:25</small>
-                                </div>
-                                <div class="message from-user">
-                                    <p>Hi!</p>
-                                    <small class="date-send">12:25</small>
+                                <div class="message"
+                                :class="{ 'from-me': messageOb.status === 'sent' } "
+                                v-for="messageOb in selectedUser.messages">
+                                <!-- devo stampaare ad ogni ciclo l'array di messages, ogni volta che l'utente viene selezionato -->
+                                    <p> {{messageOb.message}} </p>
+                                    <small class="date-send"> {{messageOb.hour}} </small>
                                 </div>
                         </div>
 
