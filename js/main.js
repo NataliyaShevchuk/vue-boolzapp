@@ -1,4 +1,4 @@
-import importedUsersList from "./usersList";
+import importedUsersList from "usersList.js";
 
 //dall'oggetto globale Vue, estraggo in una variabile la funzione CreateApp
 const  {createApp} = Vue;
