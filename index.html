@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.1.0/build/global/luxon.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -105,9 +106,9 @@
                                 <div class="message"
                                 :class="{ 'from-me': messageOb.status === 'sent' } "
                                 v-for="messageOb in selectedUser.messages">
-                                <!-- devo stampaare ad ogni ciclo l'array di messages, ogni volta che l'utente viene selezionato -->
+                                <!-- devo stampare ad ogni ciclo l'array di messages, ogni volta che l'utente viene selezionato -->
                                     <p> {{messageOb.message}} </p>
-                                    <small class="date-send"> {{messageOb.hour}} </small>
+                                    <small class="date-send"> {{ messageOb.hour}} </small>
                                 </div>
                         </div>
 
@@ -117,7 +118,9 @@
                                 <i class="fa-regular fa-face-smile"></i>
                             </div>
                             <div class="container-input">
-                                <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                                <input type="text" class="form-control" placeholder="Scrivi un messaggio"
+                                v-model="textInput"
+                                @keyup.enter="onNewMessageTextInput">
                             </div>
                             <div class="icon">
                                 <i class="fa-solid fa-microphone"></i>
