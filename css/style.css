@@ -192,6 +192,7 @@ small{
     align-items: center;
     justify-content: flex-start;
     position: relative;
+    overflow-wrap: anywhere;
 }
 
 .from-me{
@@ -225,3 +226,36 @@ p{
     color: var(--color-dark-icons);
     margin: 1rem;
 }
+
+.dropdown{
+    left: 12rem;
+    top: -0.6rem;
+}
+
+.dropdown-button{
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    font-weight: 400;
+    font-size: 0px;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    border-style: none;
+    border-color: buttonborder;
+    border-image: none;
+}
+

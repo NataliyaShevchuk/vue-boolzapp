@@ -11,6 +11,7 @@
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.1.0/build/global/luxon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -53,7 +54,9 @@
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </div>
                                 <div class="search-chat-box w-100">
-                                    <input class="form-control" type="text" placeholder="Cerca o inizia una nuova chat">
+                                    <input class="form-control" type="text" placeholder="Cerca o inizia una nuova chat"
+                                    v-model="contactInput"
+                                    > 
                                 </div>
                             </div>
                         </div>
@@ -61,17 +64,18 @@
                         <div class="chat-box-container">
                             <!-- chat box piccolo container  -->
                             <div class="chat-box" 
-                            v-for="(user, i) in usersList" :key="i + user.name"
-                            @click="selectedUser = user">
+                            @click=" selectedUser = user "
+                            v-for="(user, i) in lookingForAContact" :key="i + user.name"
+                            >
                                 <div class="user-chat-img">
                                     <img :src="` img/avatar${user.avatar}.jpg` " alt="avatar 1">
                                 </div>
                                 <div class="text-details-chat-box">
                                     <h5> {{user.name}} </h5>
-                                    <small> Ultimo messaggio inviato </small>
+                                    <small> Ultimo messaggio inviato {{lastSeenDate}} </small>
                                 </div>
                                 <div class="time-message">
-                                    <small>orario</small>
+                                    <small> {{lastSeenHour}} </small>
                                 </div>
                             </div>
 
@@ -86,11 +90,11 @@
                         <div class="sidebar-user-navbar  border-0">
                             <div class="user-img-chat">
                                 <div class="div-container-img">
-                                    <img :src="`img/avatar_1.jpg`" alt="avatar">
+                                    <img :src="`img/avatar${selectedUser.avatar}.jpg`" alt="avatar">
                                 </div>
                                 <div class="text-details-chat-box">
-                                    <h5>Name </h5>
-                                    <small> Ultimo accesso </small>
+                                    <h5>{{selectedUser.name}} </h5>
+                                    <small>Ultimo accesso: {{lastSeenDate}} </small>
                                 </div>
                             </div>
                             <div class="sidebar-user-navbar-action-icons">
@@ -105,11 +109,20 @@
 
                                 <div class="message"
                                 :class="{ 'from-me': messageOb.status === 'sent' } "
-                                v-for="messageOb in selectedUser.messages">
+                                v-for="(messageOb, i) in selectedUser.messages">
                                 <!-- devo stampare ad ogni ciclo l'array di messages, ogni volta che l'utente viene selezionato -->
-                                    <p> {{messageOb.message}} </p>
-                                    <small class="date-send"> {{ messageOb.hour}} </small>
+                                <div class="dropdown">
+                                    <button class="dropdown-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#" @click="clickInfoMessage(i)">Info sul messaggio</a></li>
+                                        <li><a class="dropdown-item" href="#" @click="clickDeleteMessage(i)">Elimina</a></li>
+                                    </ul>
                                 </div>
+                                <p> {{messageOb.message}} </p>
+                                <small class="date-send"> {{ messageOb.hour}} </small>
+                            </div>
                         </div>
 
                         <!-- footer navbar  -->
